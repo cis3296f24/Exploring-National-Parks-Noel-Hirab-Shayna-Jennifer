@@ -7,8 +7,8 @@ load_dotenv()
 
 # Set up PRAW with credentials from .env file
 reddit = praw.Reddit(
-    client_id=os.getenv("REDDIT_CLIENT_ID"),
-    client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
+    client_id=("jqIRrninQICxc33zQyjLXQ"),
+    client_secret=("rfbewE1aqpl7D0BIhZmtokIphD14qw"),
     user_agent="python:SoftwareDesignLatest:v1.0",
 )
 
