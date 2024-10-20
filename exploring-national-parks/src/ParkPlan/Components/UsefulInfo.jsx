@@ -14,21 +14,30 @@ const UsefulInfo = ({parkCode}) => {
     const [passes, setPasses] = useState([]);
 
     useEffect(() => {
-        const fetchPassFees = async () => {
+        const fetchFees = async () => {
             try {
                 console.log("parkCode", parkCode.value);
-                const passFees = await FetchPassFees(parkCode.value);
-                console.log(passFees);
-                setFees(passFees.fees);
-                setPasses(passFees.passes);
+                const fee = await FetchPassFees(parkCode.value);
+                console.log(fee);
+                setFees(fee.fees);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        const fetchPasses = async () => {
+            try {
+                console.log("parkCode", parkCode.value);
+                const pass = await FetchPassFees(parkCode.value);
+                console.log(pass);
+                setFees(pass.passes);
             } catch (error) {
                 console.log(error);
             }
         }
-
         //
         if (parkCode != null) {
-            fetchPassFees();
+            fetchFees();
+            fetchPasses();
         }
     }, [parkCode]);
 
@@ -40,35 +49,33 @@ const UsefulInfo = ({parkCode}) => {
         <div className='useful-info-container'>
             <h1>Useful Information</h1>
 
-            <h4>Fees</h4>
-            {fees.length === 0 ? (
-                <div className='fee'>No fee information availabel.</div>
+            {fees.length === 0 && passes.length === 0 ? (
+                <div className='fee'>No fee information available.</div>
             ) : (
                 <div>
-                    {fees.map((fee, index) => (
-                        <div key={index} className='fee'>
-                            <p>Description: {fee.description}</p>
-                            <p>Cost: {fee.cost}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+                    <h4>Fees</h4>
+                    <div className='fee'>
+                        {fees.map((fee, index) => (
+                            <div key={index} className='fee'>
+                                <p>Description: {fee.description}</p>
+                                <p>Cost: {fee.cost}</p>
+                            </div>
+                        ))}
+                    </div>
 
-            <h4>Passes</h4>
-            {passes.length === 0 ? (
-                <div className='pass'>No pass information availabel.</div>
-            ) : (
-                <div>
-                    {passes.map((pass, index) => (
-                        <div key={index} className='pass'>
-                            <p>Description: {pass.description}</p>
-                            <p>Cost: {pass.cost}</p>
-                        </div>
-                    ))}
+                    <h4>Passes</h4>
+                    <div className='pass'>
+                        {passes.map((pass, index) => (
+                            <div key={index} className='pass'>
+                                <p>Description: {pass.description}</p>
+                                <p>Cost: {pass.cost}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>
     )
 }
 
-export default UsefulInfo;
+export default UsefulInfo
