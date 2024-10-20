@@ -71,4 +71,4 @@ const UsefulInfo = ({parkCode}) => {
     )
 }
 
-export default Campgrounds;
+export default UsefulInfo;
