@@ -45,21 +45,15 @@ const UsefulInfo = ({parkCode}) => {
                 <div>
                     <h4>Fees</h4>
                     <div className='fee'>
-                        {fees.map((fee, index) => (
-                            <div key={index} className='fee'>
-                                <p>Description: {fee.description}</p>
-                                <p>Cost: {fee.cost}</p>
-                            </div>
+                        {fees.map((fees, index) => (
+                            <p key={index} className='fee'>{fees.description}{fee.cost}</p>
                         ))}
                     </div>
 
                     <h4>Passes</h4>
                     <div className='pass'>
                         {passes.map((pass, index) => (
-                            <div key={index} className='pass'>
-                                <p>Description: {pass.description}</p>
-                                <p>Cost: {pass.cost}</p>
-                            </div>
+                            <p key={index} className='pass'>{pass.description}{pass.cost}</p>
                         ))}
                     </div>
                 </div>
