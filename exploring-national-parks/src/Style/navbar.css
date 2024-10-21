@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #f2a412;
+    background-color: #f21212;
     top: 0;
     width: 100%;
     position:fixed;
@@ -16,7 +16,7 @@
 .nav-bar ul li{
     font-size: 1.5rem;
     &:hover{
-        background-color:#a67e46
+        background-color:#fd0000
     }
 }
 
