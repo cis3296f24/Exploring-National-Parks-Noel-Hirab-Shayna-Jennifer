@@ -14,20 +14,20 @@ const UsefulInfo = ({parkCode}) => {
     const [passes, setPasses] = useState([]);
 
     useEffect(() => {
-        const fetchInfo = async () => {
+        const fetchData = async () => {
             try {
                 console.log("parkCode", parkCode.value);
                 const feePassData = await FetchPassFees(parkCode.value);
                 console.log(feePassData);
-                setFees(feePassData.fees || []);
-                setPasses(feePassData.passes || []);
+                setFees(feePassData.data.fees || []);
+                setPasses(feePassData.data.passes || []);
             } catch (error) {
                 console.log(error);
             }
         };
 
         if (parkCode != null) {
-            fetchInfo();
+            fetchData();
         }
     }, [parkCode]);
 
@@ -67,5 +67,4 @@ const UsefulInfo = ({parkCode}) => {
         </div>
     )
 }
-
-export default UsefulInfo
+export default UsefulInfo;

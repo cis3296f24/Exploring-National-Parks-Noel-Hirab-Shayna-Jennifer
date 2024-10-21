@@ -16,7 +16,7 @@ export const FetchPassFees = async (parkCode) => {
             throw new Error('Network response was not ok');
         }
         const json = await response.json();
-        return json;
+        return json; //contains both fees and passes info
     } catch (error) {
         console.error(error.message);
         throw error;

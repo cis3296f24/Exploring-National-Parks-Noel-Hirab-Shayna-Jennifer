@@ -51,9 +51,7 @@ const Parent = () => {
       <Alerts parkCode={parkCode}/>
       <UsefulInfo parkCode={parkCode}/>
       <Schedule dates={dates} parkCode={parkCode} activities={activities}/>
-      <Campgrounds parkCode={parkCode}/> //
     </div>
   )
 }
-
 export default Parent
