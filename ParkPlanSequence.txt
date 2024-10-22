@@ -44,6 +44,15 @@ ReactComponent/JS ->ReactComponent/JS :useEffect()
 ReactComponent/JS ->NPSAPI ("backend"): asynchronous fetch() 
 activate NPSAPI ("backend")
 ReactComponent/JS <--NPSAPI ("backend"):json of alerts
+
+ReactComponent/JS ->ReactComponent/JS :useEffect()
+ReactComponent/JS ->NPSAPI ("backend"): asynchronous fetch() 
+activate NPSAPI ("backend")
+ReactComponent/JS <--NPSAPI ("backend"):json of visitor centers
+ReactComponent/JS ->NPSAPI ("backend"): asynchronous fetch() 
+activate NPSAPI ("backend")
+ReactComponent/JS <--NPSAPI ("backend"):json of events
+
 deactivate NPSAPI ("backend")
 HTML <--ReactComponent/JS : Update State
 deactivate ReactComponent/JS
