@@ -10,9 +10,8 @@ import React from 'react'
 import { useState } from 'react'
 import Filtering from './Filtering'
 import Alerts from './Alerts'
-import UsefulInfo from "./UsefulInfo";
+import VisitorInfo from "./VisitorInfo";
 import Schedule from './Schedule'
-import Campgrounds from './Campgrounds' //
 
 const Parent = () => {
   const [parkCode, setParkCode] = useState(null);
@@ -49,7 +48,7 @@ const Parent = () => {
     <div>
       <Filtering updateParkCode={updateParkCode} updateDates={updateDates} updateActivities={updateActivities}/>
       <Alerts parkCode={parkCode}/>
-      <UsefulInfo parkCode={parkCode}/>
+      <VisitorInfo parkCode={parkCode}/>
       <Schedule dates={dates} parkCode={parkCode} activities={activities}/>
     </div>
   )
