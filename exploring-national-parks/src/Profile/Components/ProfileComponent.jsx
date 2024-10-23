@@ -15,6 +15,7 @@ const ProfileComponent = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
 
   // Handle input change
   const handleChange = (e) => {
@@ -28,8 +29,11 @@ const ProfileComponent = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      handleSave(formData);
-    }
+        handleSave(formData);
+        setSuccessMessage('Profile creation successful!'); // Set the success message
+      } else {
+        setSuccessMessage(''); // Clear the success message if there are errors
+      }
   };
 
   return (
@@ -81,6 +85,7 @@ const ProfileComponent = () => {
           </tr>
         </tbody>
       </table>
+      {successMessage && <div className="success-message">{successMessage}</div>}
     </div>
   );
 };

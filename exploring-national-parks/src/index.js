@@ -19,7 +19,6 @@ import ParkSearch from './ParkSearch.js';
 import ParkInfo from './ParkInfo.js';
 import HomePage from './HomePage.js';
 import ParkPlan from './ParkPlan.js';
-import ProfileComponent from './Profile/Components/ProfileComponent.jsx';
 import Navbar from './GlobalComponents/Navbar.jsx';
 import {BrowserRouter as Router, Routes,Route} from "react-router-dom";
 import Footer from './GlobalComponents/Footer.jsx';

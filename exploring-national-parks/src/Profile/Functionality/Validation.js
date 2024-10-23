@@ -15,18 +15,6 @@ export const validateProfile = (formData) => {
     if (formData.userPassword !== formData.userPassword2) {
       errors.userPassword2Error = 'Passwords do not match';
     }
-    if (!formData.userImage) {
-      errors.userImageError = 'Image URL is required';
-    }
-    if (!formData.birthday) {
-      errors.birthdayError = 'Birthday is required';
-    }
-    if (!formData.membershipFee) {
-      errors.membershipFeeError = 'Membership fee is required';
-    }
-    if (!formData.userRoleId) {
-      errors.userRoleIdError = 'User role is required';
-    }
   
     return errors;
   };
