@@ -10,7 +10,7 @@ import React from 'react'
 import { useState } from 'react'
 import Filtering from './Filtering'
 import Alerts from './Alerts'
-//import VisitorInfo from "./VisitorInfo";
+import VisitorInfo from "./VisitorInfo";
 import Schedule from './Schedule'
 
 const Parent = () => {
@@ -48,7 +48,7 @@ const Parent = () => {
     <div>
       <Filtering updateParkCode={updateParkCode} updateDates={updateDates} updateActivities={updateActivities}/>
       <Alerts parkCode={parkCode}/>
-      
+      <VisitorInfo parkCode={parkCode}/>
       <Schedule dates={dates} parkCode={parkCode} activities={activities}/>
     </div>
   )
