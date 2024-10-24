@@ -51,6 +51,7 @@ ReactComponentJS ->NPSAPI: asynchronous fetch()
 activate NPSAPI
 ReactComponentJS <--NPSAPI:json of visitor centers
 deactivate NPSAPI
+ReactComponentJS ->ReactComponentJS :useEffect()
 ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
 ReactComponentJS <--NPSAPI:json of events
