@@ -8,10 +8,11 @@ import React, { useEffect } from 'react';
 import Welcome from './HomePage/Components/Welcome';
 import Buttons from './HomePage/Components/Buttons';
 import HighlightGallery from './HomePage/Components/HighlightGallery';
+import yosemite from './HomePage/Assets/yosemite.jpg';
 import './Style/homepage.css';
 
 const HomePage = () => {
-  // Add useEffect to load Twitter script
+  // Load Twitter script
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://platform.twitter.com/widgets.js';
@@ -21,6 +22,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page main-component">
+      {/* Welcome and Highlight Gallery */}
       <Welcome />
       <HighlightGallery />
       <Buttons />
@@ -30,6 +32,14 @@ const HomePage = () => {
         <a
           className="twitter-timeline"
           href="https://twitter.com/TheTempleNews?ref_src=twsrc%5Etfw"
+          data-width="500"
+          data-height="600"
+          style={{
+            width: '500px',
+            height: '600px',
+            display: 'block',
+            overflow: 'hidden',
+          }}
         >
           Tweets by TheTempleNews
         </a>
