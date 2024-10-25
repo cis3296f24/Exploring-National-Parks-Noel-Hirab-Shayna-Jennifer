@@ -2,72 +2,60 @@ title Park Plan Sequence
 
 actor User
 participant HTML
+
 participant ReactComponentJS
 participant NPSAPI
-participant TwitterEmbed
 
 entryspacing 0.8
 activate User
 activate HTML
 
-User -> HTML: HTTP Request
+
+User ->HTML:HTTP Request
 User <-- HTML: HTTP Response
-HTML -> ReactComponentJS: Loads
+HTML ->ReactComponentJS:Loads
 activate ReactComponentJS
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> NPSAPI: asynchronous fetch() 
+ReactComponentJS ->ReactComponentJS :useEffect()
+ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
-ReactComponentJS <-- NPSAPI: json of parks
+ReactComponentJS <--NPSAPI:json of parks
 deactivate NPSAPI
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> NPSAPI: asynchronous fetch() 
+ReactComponentJS ->ReactComponentJS :useEffect()
+ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
-ReactComponentJS <-- NPSAPI: json of activities
+ReactComponentJS <--NPSAPI:json of activities
 deactivate NPSAPI
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> TwitterEmbed: Load Twitter script
-activate TwitterEmbed
-ReactComponentJS <-- TwitterEmbed: Twitter widget loaded
-deactivate TwitterEmbed
-
 ReactComponentJS --> HTML: Update State
 deactivate ReactComponentJS
 
-User -> HTML: uses select tag\n to choose park
-User <-- HTML: Display Result
 
-User -> HTML: uses select tag\n to choose activities
-User <-- HTML: Display Result
 
-User -> HTML: uses calendar input\n to choose dates
-User <-- HTML: Display Result
+User -> HTML : uses select tag\n to choose park
+User <-- HTML : Display Result
+
+User -> HTML : uses select tag\nto choose activities
+User <-- HTML : Display Result
+User -> HTML : uses calendar input\n to choose dates
+User <-- HTML : Display Result
 
 User -> HTML: Clicks "plan trip"\nbutton
-HTML -> ReactComponentJS: Loads
+HTML ->ReactComponentJS: Loads
 activate ReactComponentJS
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> NPSAPI: asynchronous fetch() 
+ReactComponentJS ->ReactComponentJS :useEffect()
+ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
-ReactComponentJS <-- NPSAPI: json of alerts
+ReactComponentJS <--NPSAPI:json of alerts
 deactivate NPSAPI
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> NPSAPI: asynchronous fetch() 
+ReactComponentJS ->ReactComponentJS :useEffect()
+ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
-ReactComponentJS <-- NPSAPI: json of visitor centers
+ReactComponentJS <--NPSAPI:json of visitor centers
 deactivate NPSAPI
-
-ReactComponentJS -> ReactComponentJS: useEffect()
-ReactComponentJS -> NPSAPI: asynchronous fetch() 
+ReactComponentJS ->ReactComponentJS :useEffect()
+ReactComponentJS ->NPSAPI: asynchronous fetch() 
 activate NPSAPI
-ReactComponentJS <-- NPSAPI: json of events
+ReactComponentJS <--NPSAPI:json of events
 deactivate NPSAPI
-
-HTML <-- ReactComponentJS: Update State
+HTML <--ReactComponentJS : Update State
 deactivate ReactComponentJS
-
-User <-- HTML: Display Result
+User <--HTML: Display Result
